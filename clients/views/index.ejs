@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>Form</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="messages-style.css">
+</head>
+<body>
+	<div id="top">
+		<h1>The Dojo Message Board</h1>
+	</div>
+	<form action="/message" method="post">
+		<p>Name: <input type="text" name="inputName">
+		<p>Message: <textarea name="inputMessage"></textarea>
+		<input id="post" type="submit" value="Post message">
+	</form>
+
+ 	 	<div>
+			<% for(message in fetched_messages) { %>
+				<div>
+					<h3>Name: <%= fetched_messages[message].name %></h3>
+					<h3>Message: <%= fetched_messages[message].message %></h3>
+
+					<% for (each_comment of fetched_messages[message]._comments) { %>
+						<h5><%="Name: " + each_comment.name %></h5>
+						<h5><%="Comment: " + each_comment.comments %></h5>
+					<% } %>
+
+					<form action="/comment/<%=fetched_messages[message]._id %>" method="post">
+						<p class="margin">Name: </p><input class="comment_input" type="text" name="inputName">
+						<p class="margin">Comment: </p><textarea class="comment_text"name="inputComment"></textarea>
+						<input class="post2" type="submit" value="Post comment">
+					</form>
+				</div>
+			<% } %>
+		</div>
+
+</body>
+</html>
