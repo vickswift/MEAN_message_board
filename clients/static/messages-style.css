@@ -1,7 +1,7 @@
 *{
 	font-family: geneva;
 }
-#top{
+.top{
 	border-bottom: 1px solid black;
 	width: 90%;
 }
@@ -15,6 +15,9 @@ textarea{
 }
 h5, .comment_input {
 	margin-left: 12%;
+}
+h3{
+	background-color: azure;
 }
 #post {
 	color:white;
@@ -38,4 +41,9 @@ h5, .comment_input {
 	margin-left: 33.2%;
 	width:12em;
 	height: 2.5em;
+}
+.message-wrapper{
+	border: 2px solid grey;
+	width: 90%;
+	margin-bottom: 10px;
 }

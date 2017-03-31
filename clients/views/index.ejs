@@ -5,18 +5,18 @@
 	<link rel="stylesheet" href="messages-style.css">
 </head>
 <body>
-	<div id="top">
+	<div class="top">
 		<h1>The Dojo Message Board</h1>
 	</div>
-	<form action="/message" method="post">
-		<p>Name: <input type="text" name="inputName">
-		<p>Message: <textarea name="inputMessage"></textarea>
+	<form class="top" action="/message" method="post">
+		<p>Your name: <input type="text" name="inputName">
+		<p>Enter your message here: <textarea name="inputMessage"></textarea>
 		<input id="post" type="submit" value="Post message">
 	</form>
 
  	 	<div>
 			<% for(message in fetched_messages) { %>
-				<div>
+				<div class="message-wrapper">
 					<h3>Name: <%= fetched_messages[message].name %></h3>
 					<h3>Message: <%= fetched_messages[message].message %></h3>
 
